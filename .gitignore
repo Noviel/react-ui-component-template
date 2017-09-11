@@ -1,0 +1,12 @@
+.idea/
+.vscode/
+node_modules/
+.yarn/
+dist/
+/storybook/
+*.iml
+*.log
+*.swp
+*.retry
+.env
+*.emotion.css

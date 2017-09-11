@@ -1,0 +1,64 @@
+{
+  "name": "react-ui-component-template",
+  "version": "0.1.2",
+  "description": "Template for creation of the React UI component/library",
+  "main": "dist/index.js",
+  "repository": "git@github.com:Noviel/react-ui-component-template.git",
+  "author": "Aleksandr Snov <snov.contact@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "rimraf dist/ && webpack --config webpack/webpack.config.babel.js",
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "lint": "eslint src",
+    "test": "jest",
+    "precommit": "yarn lint && yarn test && yarn build",
+    "prepublishOnly": "yarn precommit"
+  },
+  "jest": {
+    "verbose": true,
+    "rootDir": "",
+    "modulePathIgnorePatterns": [
+      "<rootDir>/dist/",
+      "<rootDir/node_modules/"
+    ],
+    "testRegex": "(src|webpack).*(/__tests__/.*|(\\.|/)(test|spec))\\.jsx?$",
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less|scss)$": "identity-obj-proxy"
+    }
+  },
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "@storybook/react": "^3.2.8",
+    "autoprefixer": "^7.1.4",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-jest": "^21.0.2",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babili-webpack-plugin": "^0.1.2",
+    "enzyme": "^2.9.1",
+    "eslint": "^4.6.1",
+    "eslint-config-dqnt": "^1.0.0",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "husky": "^0.14.3",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^21.0.2",
+    "node-sass": "^4.5.3",
+    "postcss-loader": "^2.0.6",
+    "precss": "^2.0.0",
+    "react-test-renderer": "^15.6.1",
+    "rimraf": "^2.6.1",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "url-loader": "^0.5.9",
+    "webpack": "^3.5.6",
+    "webpack-features": "^1.6.4"
+  }
+}
