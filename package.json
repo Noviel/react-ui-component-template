@@ -1,6 +1,6 @@
 {
   "name": "react-ui-component-template",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Template for creation of the React UI component/library",
   "main": "dist/index.js",
   "repository": "git@github.com:Noviel/react-ui-component-template.git",
