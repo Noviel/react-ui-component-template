@@ -10,6 +10,7 @@ function resolveDir(relativePath) {
 const paths = {
   root,
   src: resolveDir('src'),
+  components: resolveDir('src/components'),
   build: resolveDir('dist')
 };
 

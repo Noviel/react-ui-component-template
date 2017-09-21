@@ -1,9 +1,12 @@
-const { createBuildManager } = require('webpack-features');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const { createBuildManager, createExtractTextPlugin } = require('webpack-features');
 
 const paths = require('./paths');
 const createJSRules = require('./rules/js');
-const { createStyleRules, createStylePlugin } = require('./rules/style');
+const { createStyleRules } = require('./rules/style');
 const createMediaRules = require('./rules/media');
+
+const Plugin = createExtractTextPlugin(ExtractTextPlugin);
 
 const apps = [
   {
@@ -25,16 +28,21 @@ module.exports = function({ BUILD_APPS, target, production }) {
   });
 
   buildManager.addEntries(apps);
-
+  
   const rules = [
-    ...createStyleRules(env), 
+    ...createStyleRules(env,  {
+      cssModulesPath: paths.components
+    }), 
     ...createJSRules(env), 
     ...createMediaRules()
   ];
 
   const plugins = []
     .concat(...buildManager.plugins())
-    .concat(createStylePlugin(env));
+    .concat(Plugin({ 
+      ...env,
+      filename: 'style.css'
+    }));
 
   const entries = buildManager.entries();
 
