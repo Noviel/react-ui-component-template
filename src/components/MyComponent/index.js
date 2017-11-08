@@ -1,11 +1,11 @@
 import React from 'react';
 
-import styles from './styles.scss';
+import styles from './styles.module.scss';
 
 export default class Component extends React.Component {
   static defaultProps = {
-    text: 'Hello'
-  }
+    text: 'Hello',
+  };
 
   render() {
     const { text } = this.props;

@@ -3,7 +3,4 @@ import { storiesOf } from '@storybook/react';
 
 import MyComponent from './index';
 
-storiesOf('MyComponent', module)
-  .add('default', () => (
-    <MyComponent />
-  ));
+storiesOf('MyComponent', module).add('default', () => <MyComponent />);

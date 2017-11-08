@@ -1,14 +1,19 @@
 const path = require('path');
-const paths = require('../webpack/paths');
+const paths = require('../config/paths');
 
-const { createStyleRules } = require('../webpack/rules/style');
+const initFeatures = require('webpack-features').default;
+
+const { styles, getState } = initFeatures({
+  target: { browsers: 'modern' },
+  production: false,
+});
 
 module.exports = (storybookBaseConfig, configType) => {
+  styles({ preprocessors: ['css', 'scss'] });
+
   storybookBaseConfig.module.rules = storybookBaseConfig.module.rules.concat(
-    createStyleRules({ target: 'client', production: false }, {
-      cssModulesPath: paths.components
-    })
+    getState().module.rules
   );
 
   return storybookBaseConfig;
-}
+};
