@@ -1,7 +1,5 @@
 # React UI Component Template
 
-## bI?
-
 Template for rapid development of React component/library as a standalone package.
 
 ## Features
@@ -26,12 +24,12 @@ git clone git@github.com:Noviel/react-ui-component-template.git
 1. Write some tests
 1. `yarn lint`
 1. `yarn test`
-1. `yarn build` will produce built files `dist/index.js` and `dist/style.css`, which you can include in other projects:
+1. `yarn build` will produce built files `dist/index.js` and `dist/index.css`, which you can include in other projects:
 
 ```javascript
 import React from 'react';
 import { MyAwesomeComponent } from 'my-ui-lib/dist';
-import 'my-ui-lib/dist/style.css';
+import 'my-ui-lib/dist/index.css';
 
 console.log(<MyAwesomeComponent />);
 ```
