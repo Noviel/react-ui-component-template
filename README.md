@@ -1,5 +1,7 @@
 # React UI Component Template
 
+**This project is deprecated!** Use [react-on-maxs](https://github.com/Noviel/react-on-maxs)
+
 Template for rapid development of React component/library as a standalone package.
 
 ## Features
